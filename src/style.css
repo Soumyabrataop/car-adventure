@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  color: #f5f2eb;
+  background: #101820;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; overflow: hidden; background: #101820; }
+button { font: inherit; }
+#game-shell, #game-canvas { width: 100vw; height: 100vh; }
+#game-shell { position: relative; overflow: hidden; }
+#game-canvas { display: block; }
+
+.hud { position: absolute; inset: 0; padding: 28px; pointer-events: none; }
+.hud-panel, .timer, .icon-button { background: rgba(16, 24, 32, .82); border: 1px solid rgba(245, 242, 235, .18); }
+.hud-panel { position: absolute; top: 28px; left: 28px; min-width: 138px; padding: 12px 16px; }
+.hud-panel--right { left: auto; right: 28px; text-align: right; }
+.eyebrow { display: block; margin: 0 0 5px; color: #ef8354; font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.hud strong { display: block; font-size: 1.2rem; letter-spacing: .02em; }
+.timer { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); padding: 10px 14px; font-family: 'DM Mono', monospace; font-size: .9rem; }
+.icon-button { position: absolute; top: 28px; right: 28px; display: none; width: 42px; height: 42px; color: #f5f2eb; cursor: pointer; pointer-events: auto; }
+
+.menu-panel { position: absolute; top: 50%; left: 50%; width: min(460px, calc(100vw - 40px)); transform: translate(-50%, -50%); padding: 34px; background: rgba(16, 24, 32, .9); border-left: 4px solid #ef8354; box-shadow: 0 24px 80px rgba(0, 0, 0, .35); }
+.menu-panel--compact { width: min(340px, calc(100vw - 40px)); text-align: center; }
+h1, h2 { margin: 0; color: #f5f2eb; font-weight: 800; line-height: .9; text-transform: uppercase; }
+h1 { font-size: clamp(3.5rem, 10vw, 6.5rem); letter-spacing: .015em; }
+h2 { font-size: 2.8rem; }
+.menu-copy { max-width: 310px; margin: 20px 0 26px; color: #bec7c5; font-size: 1.2rem; line-height: 1.15; }
+.primary-button { border: 0; padding: 13px 24px; color: #101820; background: #ef8354; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.primary-button:hover, .primary-button:focus-visible { background: #f6ad72; }
+.text-button { display: block; margin: 18px auto 0; padding: 0; color: #bec7c5; background: none; border: 0; cursor: pointer; }
+.control-copy { margin: 22px 0 0; color: #7f9290; font-family: 'DM Mono', monospace; font-size: .68rem; line-height: 1.5; }
+.finish-time { margin: 20px 0; color: #ef8354; font-family: 'DM Mono', monospace; font-size: 1.6rem; }
+
+.touch-controls { position: absolute; right: 20px; bottom: 20px; left: 20px; justify-content: space-between; pointer-events: none; }
+.touch-controls button { width: 54px; height: 54px; color: #f5f2eb; background: rgba(16, 24, 32, .75); border: 1px solid rgba(245, 242, 235, .3); pointer-events: auto; touch-action: none; }
+
+@media (max-width: 640px) {
+  .hud { padding: 16px; }
+  .hud-panel { top: 16px; left: 16px; min-width: 116px; padding: 9px 11px; }
+  .hud-panel--right { right: 16px; }
+  .timer { top: 82px; }
+  .icon-button { display: block; top: 16px; right: 16px; }
+  .hud-panel--right { right: 70px; }
+  .menu-panel { padding: 26px; }
+  .touch-controls { display: flex; }
+}

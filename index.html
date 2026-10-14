@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101820" />
+    <title>Night Circuit</title>
+  </head>
+  <body>
+    <main id="game-shell">
+      <canvas id="game-canvas" aria-label="3D racing game"></canvas>
+      <section id="hud" class="hud" hidden aria-live="polite">
+        <div class="hud-panel">
+          <span class="eyebrow">Night Circuit</span>
+          <strong id="lap-value">Lap 1 / 3</strong>
+        </div>
+        <div class="hud-panel hud-panel--right">
+          <span class="eyebrow">Speed</span>
+          <strong><span id="speed-value">0</span> km/h</strong>
+        </div>
+        <div class="timer" id="timer-value">00:00.000</div>
+        <button class="icon-button" id="pause-button" type="button" aria-label="Pause race">Ⅱ</button>
+      </section>
+      <section id="menu" class="menu-panel">
+        <p class="eyebrow">Three.js racing prototype</p>
+        <h1>Night Circuit</h1>
+        <p class="menu-copy">Take the inside line, hold your speed, and complete three clean laps.</p>
+        <button class="primary-button" id="start-button" type="button">Start race</button>
+        <p class="control-copy">WASD or arrow keys to drive · R to reset · Esc to pause</p>
+      </section>
+      <section id="pause-panel" class="menu-panel menu-panel--compact" hidden>
+        <p class="eyebrow">Race paused</p>
+        <h2>Take a breath.</h2>
+        <button class="primary-button" id="resume-button" type="button">Resume</button>
+        <button class="text-button" id="restart-button" type="button">Restart race</button>
+      </section>
+      <section id="finish-panel" class="menu-panel menu-panel--compact" hidden>
+        <p class="eyebrow">Finish line crossed</p>
+        <h2>Race complete.</h2>
+        <p class="finish-time" id="finish-time">00:00.000</p>
+        <button class="primary-button" id="finish-restart-button" type="button">Race again</button>
+      </section>
+      <div id="touch-controls" class="touch-controls" hidden>
+        <button data-control="left" type="button" aria-label="Steer left">←</button>
+        <button data-control="brake" type="button" aria-label="Brake or reverse">↓</button>
+        <button data-control="throttle" type="button" aria-label="Accelerate">↑</button>
+        <button data-control="right" type="button" aria-label="Steer right">→</button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
